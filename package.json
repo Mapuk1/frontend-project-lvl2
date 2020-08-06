@@ -1,0 +1,26 @@
+{
+  "name": "frontend-project-lvl2",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "bin/gendiff.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mapuk1/frontend-project-lvl2.git"
+  },
+  "author": "Mapuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mapuk1/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/Mapuk1/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^6.0.0"
+  }
+}
