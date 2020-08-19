@@ -22,3 +22,10 @@ jobs:
     - name: run linter
       run: |
         make lint
+
+    - name: Test & publish code coverage
+      env:
+          SECRET_COVERAGE: ${{ secrets.SECRET_COVERAGE }}
+      with:
+          coverageCommand: make test-coverage
+          debug: true
