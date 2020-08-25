@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+import getParse from './parsers.js';
 
 export default (filepath1, filepath2) => {
   const file1 = fs.readFileSync(path.resolve(process.cwd(), filepath1));
   const file2 = fs.readFileSync(path.resolve(process.cwd(), filepath2));
-  const obj1 = JSON.parse(file1);
-  const obj2 = JSON.parse(file2);
+  const obj1 = getParse(filepath1)(file1);
+  const obj2 = getParse(filepath2)(file2);
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
   const allKeys = keys1.concat(keys2).sort();
