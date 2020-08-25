@@ -2,13 +2,13 @@
   "name": "frontend-project-lvl2",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "bin/gendiff.js",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "type": "module",
   "scripts": {
-    "test": "npx -n --experimental-vm-modules jest --watch"
+    "test": "npx -n --experimental-vm-modules jest --coverage"
   },
   "jest": {
     "testEnvironment": "node",
