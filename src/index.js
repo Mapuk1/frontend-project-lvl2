@@ -3,8 +3,8 @@ import path from 'path';
 import getParse from './parsers.js';
 
 export default (filepath1, filepath2) => {
-  const file1 = fs.readFileSync(path.resolve(process.cwd(), filepath1));
-  const file2 = fs.readFileSync(path.resolve(process.cwd(), filepath2));
+  const file1 = fs.readFileSync(path.resolve(process.cwd(), filepath1), 'utf8');
+  const file2 = fs.readFileSync(path.resolve(process.cwd(), filepath2), 'utf8');
   const obj1 = getParse(filepath1)(file1);
   const obj2 = getParse(filepath2)(file2);
   const keys1 = Object.keys(obj1);

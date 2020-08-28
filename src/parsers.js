@@ -1,5 +1,6 @@
 import path from 'path';
 import yaml from 'js-yaml';
+import ini from 'ini';
 
 export default (filepath) => {
   let parse;
@@ -8,6 +9,8 @@ export default (filepath) => {
     parse = JSON.parse;
   } else if (format === '.yml') {
     parse = yaml.safeLoad;
+  } else if (format === '.ini') {
+    parse = ini.parse;
   }
   return parse;
 };
