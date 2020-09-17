@@ -19,7 +19,7 @@ const result = `{
   + verbose: true
 }`;
 
-const diffFull = fs.readFileSync(getFixturePath('diffDepth.txt'), 'utf8');
+const diffFull = fs.readFileSync(getFixturePath('diffDepth.txt'), 'utf8').trimRight();
 
 test.each`
 file1           | file2           | expected
