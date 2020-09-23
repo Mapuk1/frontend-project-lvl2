@@ -32,7 +32,9 @@ export default (filepath1, filepath2) => {
       } else if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
         acc.push({ name: key, status: 'modified', value: getData(obj1[key], obj2[key]) });
       } else if (obj1[key] !== obj2[key]) {
-        acc.push({ name: key, status: 'deleted', oldValue: getValueDepth(obj1[key]) }, { name: key, status: 'added', newValue: getValueDepth(obj2[key]) });
+        acc.push({
+          name: key, status: 'updated', oldValue: getValueDepth(obj1[key]), newValue: getValueDepth(obj2[key]),
+        });
       } else {
         acc.push({ name: key, status: 'nothing', value: getValueDepth(obj2[key]) });
       }

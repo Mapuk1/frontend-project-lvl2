@@ -3,7 +3,8 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { test, expect } from '@jest/globals';
 import gendiff from '../src/index.js';
-import stylish from '../src/stylish.js';
+import stylish from '../src/formatters/stylish.js';
+import plain from '../src/formatters/plain.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,6 +21,7 @@ const result = `{
 }`;
 
 const diffFull = fs.readFileSync(getFixturePath('diffDepth.txt'), 'utf8').trimRight();
+const diffPlain = fs.readFileSync(getFixturePath('diffPlain.txt'), 'utf8').trimRight();
 
 test.each`
 file1           | file2           | expected
@@ -31,4 +33,9 @@ ${'1.json'}     | ${'2.json'}     | ${diffFull}
   const filepath1 = getFixturePath(file1);
   const filepath2 = getFixturePath(file2);
   expect(stylish(gendiff(filepath1, filepath2), 0).split(',').join('')).toEqual(expected);
+});
+test('diffPlain', () => {
+  const filepath1 = getFixturePath('1.json');
+  const filepath2 = getFixturePath('2.json');
+  expect(plain(gendiff(filepath1, filepath2), '').trimRight()).toEqual(diffPlain);
 });
