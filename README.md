@@ -18,10 +18,10 @@ Comparison of flat files (ini)
 Recursive comparison
 [![asciicast](https://asciinema.org/a/DYqj8VhLklHwmEDJiCMrg1ku0.svg)](https://asciinema.org/a/DYqj8VhLklHwmEDJiCMrg1ku0)
 
-Flat format`\n`
+Flat format
 [![asciicast](https://asciinema.org/a/ZoEY3Oy9QbzpU189hiWyWN0VQ.svg)](https://asciinema.org/a/ZoEY3Oy9QbzpU189hiWyWN0VQ)
 
-Output in json`\n`
+Output in json
 [![asciicast](https://asciinema.org/a/lQU9RRkoiDB13ecwUMhNW4WWZ.svg)](https://asciinema.org/a/lQU9RRkoiDB13ecwUMhNW4WWZ)
 
 
