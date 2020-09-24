@@ -34,15 +34,21 @@ ${'1.json'}     | ${'2.json'}     | ${diffFull}
 `('gendiff $file1 $file2', ({ file1, file2, expected }) => {
   const filepath1 = getFixturePath(file1);
   const filepath2 = getFixturePath(file2);
-  expect(stylish(gendiff(filepath1, filepath2), 0).split(',').join('')).toEqual(expected);
+  const diff = gendiff(filepath1, filepath2);
+  const actualValue = stylish(diff);
+  expect(actualValue).toEqual(expected);
 });
 test('diffPlain', () => {
   const filepath1 = getFixturePath('1.json');
   const filepath2 = getFixturePath('2.json');
-  expect(plain(gendiff(filepath1, filepath2), '').trimRight()).toEqual(diffPlain);
+  const diff = gendiff(filepath1, filepath2);
+  const actualValue = plain(diff);
+  expect(actualValue).toEqual(diffPlain);
 });
 test('diffJson', () => {
   const filepath1 = getFixturePath('1.json');
   const filepath2 = getFixturePath('2.json');
-  expect(json(gendiff(filepath1, filepath2))).toEqual(diffJson);
+  const diff = gendiff(filepath1, filepath2);
+  const actualValue = json(diff);
+  expect(actualValue).toEqual(diffJson);
 });

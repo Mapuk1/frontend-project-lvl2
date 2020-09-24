@@ -5,11 +5,13 @@ import json from './json.js';
 const formatter = (data, format) => {
   switch (format) {
     case 'plain':
-      return plain(data, '').trimRight();
+      return plain(data);
     case 'json':
       return json(data);
+    case 'stylish':
+      return stylish(data);
     default:
-      return stylish(data, 0).split(',').join('');
+      throw new Error(`Unknown order state': '${format}'!`);
   }
 };
 export default formatter;
