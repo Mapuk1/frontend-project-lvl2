@@ -2,15 +2,15 @@ import path from 'path';
 import yaml from 'js-yaml';
 import ini from 'ini';
 
-export default (filepath) => {
+export default (filepath, data) => {
   const format = path.extname(filepath);
   switch (format) {
     case '.json':
-      return JSON.parse;
+      return JSON.parse(data);
     case '.yml':
-      return yaml.safeLoad;
+      return yaml.safeLoad(data);
     case '.ini':
-      return ini.parse;
+      return ini.parse(data);
     default:
       throw new Error(`Unknown order state': '${format}'!`);
   }
