@@ -29,8 +29,8 @@ const getData = (obj1, obj2) => {
 export default (filepath1, filepath2) => {
   const data1 = fs.readFileSync(path.resolve(process.cwd(), filepath1), 'utf8');
   const data2 = fs.readFileSync(path.resolve(process.cwd(), filepath2), 'utf8');
-  const object1 = getParse(filepath1, data1);
-  const object2 = getParse(filepath2, data2);
+  const object1 = getParse(filepath1)(data1);
+  const object2 = getParse(filepath2)(data2);
 
   return getData(object1, object2);
 };
